@@ -8,6 +8,14 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	&__link{
+		&:hover{
+			svg path{
+				fill:$main-color;
+				transition: 0.4s all;
+			}
+		}
+	}
 	&__divider{
 		width: 2px;
 		height: 70px;

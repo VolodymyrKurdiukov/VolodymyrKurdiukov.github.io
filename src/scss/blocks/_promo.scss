@@ -12,6 +12,9 @@
 	&__title{
 		width: 535px;
 		margin-top: 10px;
+		&-h{
+			display: none;
+		}
 	}
 	&__btns{
 		margin-top: 25px;
