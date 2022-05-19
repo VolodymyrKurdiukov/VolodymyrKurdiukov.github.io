@@ -45,6 +45,39 @@
 			}
 		}
 	}
+	.about{
+		padding-top: 60px;
+		&__wrapper{
+		grid-template-columns: 330px 570px;
+		}
+	}
+}
+@media (max-width: 992px){
+	.about{
+		&__wrapper{
+			padding: 0px 50px;
+			grid-template-columns: 1fr;
+			grid-auto-columns: 1fr 1fr;
+			justify-items: center;
+			row-gap: 10px;
+		}
+		&__photo{
+			max-width: 500px;
+			grid-row: 2/3;
+		}
+		&__descr{
+			grid-row: 1/2;
+		}
+		&__skills{
+			display: flex;
+			flex-direction: column;
+			margin-top: 40px;
+			column-gap:20px;
+			&-item{
+				display: flex;
+			}
+		}
+	}
 }
 @media (max-width: 768px){
 	.promo{
@@ -68,6 +101,15 @@
 			line-height: 25px;
 			&-h{
 				display: block;
+			}
+		}
+	}
+	.about{
+		&__skills{
+			&-circle{
+				&-m{
+					padding: 15px 0px 0px 25px;
+				}
 			}
 		}
 	}
