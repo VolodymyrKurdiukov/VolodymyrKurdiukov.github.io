@@ -2,13 +2,18 @@
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 60px;
-	&fz_16{
+	&_fz14{
+		font-size: 14px;
+		line-height: 21px;
+	}
+	&_fz16{
 		font-size: 16px;
 		line-height: 24px;
 	}
+	&_fz21{
+
+	}
 	&_fz48{
 		font-size: 48px;
-		line-height: 60px;
-		width: 530px;
 	}
 }
