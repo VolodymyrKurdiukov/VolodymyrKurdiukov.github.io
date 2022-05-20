@@ -3,10 +3,11 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
-	position: absolute;
+	position: fixed;
 	top: 20px;
 	right: 30px;
 	height: 21px;
+	z-index: 9;
 	cursor: pointer;
 	span{
 		display: block;
