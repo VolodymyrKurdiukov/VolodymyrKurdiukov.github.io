@@ -17,7 +17,7 @@
 	.title{
 		&_fz16{
 			font-size: 14px;
-			line-height: 14px;
+			line-height: 25px;
 		}
 		&_fz48{
 			margin-top: 18px;
@@ -46,9 +46,10 @@
 		}
 	}
 	.about{
-		padding-top: 60px;
+		padding: 60px 60px 0 60px;
 		&__wrapper{
 		grid-template-columns: 330px 570px;
+		column-gap: 30px;
 		}
 	}
 	.resume{
@@ -59,7 +60,8 @@
 	}
 	.skills{
 		&__container{
-			grid-template: repeat(3, minmax(270px, auto)) / repeat(3, minmax(270px, auto));
+			grid-template-columns: repeat(auto-fit, 270px);
+			justify-content: space-between;
 		}
 	}
 	.portfolio{
@@ -68,6 +70,7 @@
 			justify-content: center;
 			margin-top: 40px;
 			grid-template: repeat(4, 280px) / repeat(2, 280px);
+			grid-auto-rows: 280px;
 		}
 		.vertical{
 			grid-row: 1/3;
@@ -76,33 +79,45 @@
 		.horizontal{
 			grid-row: 3/4;
 			grid-column: 1/3;
+			img{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	.contacts{
+		padding-top: 80px;
+		&__wrapper{
+			grid-template-columns: 1fr 2fr;
+			column-gap:50px;
+		}
+		&__form{
+			grid-template: 40px 90px 40px / repeat(2, minmax(auto,260px));
 		}
 	}
 }
 @media (max-width: 992px){
 	.about{
 		&__wrapper{
-			padding: 0px 5px;
-			grid-template-columns: 1fr;
-			grid-auto-columns: 1fr 1fr;
-			justify-items: center;
-			row-gap: 10px;
-		}
-		&__photo{
-			max-width: 500px;
-			grid-row: 2/3;
-		}
-		&__descr{
-			grid-row: 1/2;
+			grid-template-columns: 300px 380px;
 		}
 		&__skills{
-			display: flex;
-			flex-direction: column;
-			margin-top: 40px;
-			column-gap:20px;
+			grid-template-columns: 380px;
+			grid-auto-rows: minmax(115px, auto);
 			&-item{
-				display: flex;
+				grid-template-columns: 40px 320px;
+				column-gap:20px;
 			}
+		}
+	}
+	.divider{
+		margin: 15px auto 15px auto;
+	}
+	.skills{
+	&__container{
+		justify-content: center;
+	// 		grid-template: repeat(3,1fr)/repeat(3,1fr);
 		}
 	}
 	.price{
@@ -112,7 +127,26 @@
 			grid-template: repeat(6, minmax(44px, auto)) / repeat(1, minmax(490px, auto));
 		}
 		&__item{
+			&-title{
+				width: 65%;
+			}
 			width: 100%;
+		}
+	}
+	.contacts{
+		&__form{
+			display: flex;
+			flex-direction: column;
+			row-gap: 0;
+			justify-content: space-between;
+		}
+		&__input{
+			margin-top: 10px;
+			height: 45px;
+		}
+		&__textarea{
+			margin: 10px 0;
+			height: 150px;
 		}
 	}
 }
@@ -128,6 +162,24 @@
 			grid-template-columns: 1fr;
 		}
 	}
+	.about{
+		padding: 40px 0px 10px;
+		&__wrapper{
+			grid-template: 400px auto auto / 1fr;
+		}
+		&__skills{
+			grid-template-columns: 1fr;
+			&-item{
+				grid-template-columns: 40px auto;
+			}
+		}
+		&__descr, &__skills{
+		padding-left:50px;
+		}
+		&__photo{
+			grid-row: unset;
+		}
+	}
 	.skills{
 		padding-top: 60px;
 		&__container{
@@ -135,6 +187,19 @@
 		}
 		&__rating{
 			grid-template: repeat(3, minmax(auto, 70px))/repeat(2, minmax(auto, 350px));
+		}
+	}
+	.contacts{
+		&__photo{
+			display: none;
+		}
+		&__wrapper{
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+		&__form{
+			width: 100%;
 		}
 	}
 }
@@ -162,28 +227,39 @@
 	.portfolio{
 		padding-top: 60px;
 		&__wrapper{
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+			grid-template: repeat(6, minmax(300px, 350px)) / minmax(300px, 350px);
+			grid-auto-rows: minmax(300px, 350px);
+			.vertical, .horizontal{
+				grid-row: unset;
+				grid-column: unset;
+			}
 		}
 		&__item{
-			width: 70%;
+			img{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 	.price{
 		&__wrapper{
-			padding: 0px 35px;
+			padding: 0px 10px 0 35px;
 			justify-content: center;
 			grid-template: repeat(6, minmax(44px, auto)) / repeat(1, minmax(auto, 370px));
 		}
 	}
 }
-@media (max-width: 575px){
+@media (max-width: 577px){
+	.container{
+		width: 100%;
+	}
 	.sidepanel{
 		display: none;
 	}
 	.promo{
+		padding-top: 150px;
+		background: url('../img/background.jpg') center center/cover no-repeat;
 		&__block{
 			padding: 0px 0px 0px 30px;
 		}
@@ -205,6 +281,9 @@
 				}
 			}
 		}
+		&__descr, &__skills{
+			padding-left:0px;
+			}
 	}
 	.resume{
 		&__wrapper{
@@ -215,7 +294,6 @@
 		&_fz36{
 			font-size: 30px;
 			line-height: 30px;
-			margin: 23px 0;
 		}
 	}
 	.skills{
@@ -227,5 +305,21 @@
 			grid-template: 1fr / 1fr;
 		}
 	}
-	
+	.contacts{
+		&__wrapper{
+			padding: 0px 10px;
+		}
+		&__btn{
+			width: 100%;
+			margin-top: 10px;
+			order: 2;
+		}
+		&__policy{
+			order: 1;
+		}
+		&__triggers{
+			display: flex;
+			flex-direction: column;
+		}
+	}
 }
